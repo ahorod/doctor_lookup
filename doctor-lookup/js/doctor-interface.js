@@ -2,16 +2,17 @@ var Doctor = require('./../js/doctor.js').doctorModule;
 
 var displayDoctors = function(medicalIssue, doctorData) {
   doctorData.forEach(function(doctor){
-  var doctorBio = doctor.profile.bio;
+  var doctorFirstName = doctor.profile.first_name;
+  var doctorLastName = doctor.profile.last_name;
   var display =
   '<div class="col-md-4 mb-3">' +
         '<div class="card">' +
           '<div class="card-block">' +
-            '<h4 class="card-title">' + doctorBio + '</h4>' +
+            '<h4 class="card-title">' + doctorFirstName + doctorLastName + '</h4>' +
           '</div>' +
         '</div>' +
   '</div>';
-  $('.showDoctor').append(medicalIssue + display);
+  $('.showDoctor').append(display);
 });
 };
 
